@@ -7,6 +7,6 @@ for user in $USERS
 do
     IAM_GROUPS=`aws $EXTRA iam list-groups-for-user --user-name $user --query "Groups[].GroupName" --output text`
     if [[ $IAM_GROUPS = *${curgroup}* ]]; then
-        echo -e "$user\\thttps://www.office.com/search?auth=2&q=$user"
+        echo -e "$user\\thttps://www.office.com/search?q=$user"
     fi
 done
