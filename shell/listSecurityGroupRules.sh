@@ -7,7 +7,7 @@ TMPFILE=.jsonfile.tmp
 INGRESS=ingress-$vpcName-$region.tsv
 EGRESS=egress-$vpcName-$region.tsv
 
-vpcId=`aws $AWS_OPTS ec2 describe-vpcs --region $region --filters Name=tag:Name,Values=vpc-bps-p-ew1-edg --query Vpcs[].VpcId --output text`
+vpcId=`aws $AWS_OPTS ec2 describe-vpcs --region $region --filters Name=tag:Name,Values=$vpcId --query Vpcs[].VpcId --output text`
 echo "List all Security Group Rules for VPC $vpcName($vpcId) in $region"
 
 #Ingress
